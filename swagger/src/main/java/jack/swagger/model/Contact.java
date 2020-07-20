@@ -1,9 +1,16 @@
 package jack.swagger.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value = "Description for the Contact representation model")
 public class Contact {
 
+	@ApiModelProperty(notes = "id of the person")
 	private String id;
+	@ApiModelProperty(notes = "name of the person")
 	private String name;
+	@ApiModelProperty(notes = "phone number of the person")
 	private String phone;
 	public Contact() {
 
