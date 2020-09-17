@@ -22,7 +22,7 @@ public class AddressBookController {
 	@Autowired
 	private ContactRepository repo;
 	
-	@GetMapping("/")
+	@GetMapping("/all")
 	@ApiOperation(	value = "retrieve all contact objects",
 					notes = " no note available")
 	public List<Contact> getContacts() {
@@ -34,7 +34,6 @@ public class AddressBookController {
 					notes = " Provide the id in the uri to look up a specific contact from the address book",
 					response = Contact.class)
 	public Contact getContactById(
-			
 			@ApiParam(value = "Id value for the contact you need to retrieve")
 			@PathVariable String id) {
 		return repo.getContact(id);
@@ -44,7 +43,6 @@ public class AddressBookController {
 	@ApiOperation(	value = "add a new contact object",
 					notes = " no note available")
 	public void AddContact(
-			
 			@RequestBody Contact contact) {
 		repo.addContact(contact);
 	}
